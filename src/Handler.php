@@ -20,6 +20,7 @@ use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Handler\Curl;
 use Monolog\Handler\HandlerInterface;
 use Monolog\Logger;
+use Monolog\LogRecord;
 use Monolog\Util;
 
 class Handler extends AbstractHandler
@@ -27,11 +28,11 @@ class Handler extends AbstractHandler
     /**
      * Delegates upload of single record to send()
      *
-     * @param array $record
+     * @param LogRecord $record
      */
-    protected function write(array $record): void
+    protected function write(LogRecord $record): void
     {
-        $this->send($record["formatted"]);
+        $this->send($record->formatted);
     }
 
     /**
