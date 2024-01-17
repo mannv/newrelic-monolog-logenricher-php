@@ -9,7 +9,7 @@
             "email": "php-agent@newrelic.com"
         }
     ],
-    "abandoned": true,
+    "abandoned": false,
     "require": {
         "php": ">=5.3.0",
         "monolog/monolog": "^3"
